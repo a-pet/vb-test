@@ -1,0 +1,31 @@
+version: 2
+sources:
+  - name: sources_combined
+    schema: "{{ env_var('PROSPECT_NAME') }}_extracts"
+    tables:
+      - name: source_daily_google_ads_keywords
+        identifier: google_ads_keyword_view
+      - name: source_hourly_google_ads_campaigns
+        identifier: google_ads_campaign
+      - name: source_daily_google_ads_ad
+        identifier: google_ads_ad_group_ad
+      - name: source_daily_google_ads_ad_group
+        identifier: google_ads_ad_group
+      - name: source_daily_google_ads_ad_group_with_more_stats
+        identifier: "p_ads_AdStats_{{ env_var('CUSTOMER_ID') }}"
+      - name: source_daily_meta_ads
+        identifier: facebook_ads_insights
+      - name: source_entity_custom_audiences
+        identifier: custom_audiences
+      - name: source_ga4_daily_country_marketing_channel
+        identifier: custom_source_ga4_daily_country_marketing_channel_with_session_metrics
+      - name: source_ga4_demographic_country_report
+        identifier: ga4_demographic_country_report
+      - name: source_daily_new_return_sales_orders_2024_shopify
+        identifier: gsheet_shopify_orders_new_vs_return_2024
+      - name: source_daily_new_return_sales_orders_2023_shopify
+        identifier: gsheet_shopify_orders_new_vs_return_2023
+      - name: source_shopify_daily_sales_orders_users_by_country
+        identifier: csv_shopify_daily_sales_orders_users_by_country
+      - name: source_shopify_monthly_sales_orders_new_return_per_order
+        identifier: shopify_monthly_sales_orders_new_return_per_order

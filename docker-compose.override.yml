@@ -1,0 +1,12 @@
+version: "3"
+services:
+  dbt:
+    tty: true
+    image: dbt-growth-shop
+    build: .
+    working_dir: /usr/app/
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /root/.dbt/gbq_creds.json
+    volumes:
+      - .:/usr/app/
+      - ./conf/.dbt/:/root/.dbt/
