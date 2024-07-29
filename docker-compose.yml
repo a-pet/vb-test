@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  dbt:
+    tty: true
+    build: .
+    working_dir: /usr/app/
+    environment:
+      GOOGLE_APPLICATION_CREDENTIALS: /root/.dbt/gbq_creds.json
+      PROSPECT_NAME: ${PROSPECT_NAME}
+      CUSTOMER_ID: ${CUSTOMER_ID}
+    volumes:
+      - .:/usr/app/
+      - ./conf/.dbt/:/root/.dbt/

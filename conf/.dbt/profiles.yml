@@ -1,0 +1,12 @@
+default:
+  target: test
+  outputs:
+    dbt_transform:
+      type: bigquery
+      method: service-account
+      database: growth-shop-prospects
+      schema: "{{ env_var('PROSPECT_NAME') }}_dbt_transform"
+      threads: 7
+      timeout_seconds: 300
+      priority: interactive
+      keyfile: /root/.dbt/gbq_creds.json

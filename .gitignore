@@ -1,0 +1,13 @@
+target/
+dbt_modules/
+logs/
+.idea/
+conf/.dbt/.user.yml
+conf/.dbt/gbq_creds.json
+conf/.dbt/certs.json
+conf/.dbt/*.json
+env
+debug*
+__pycache__/
+ad_videos/
+company_ids.md
